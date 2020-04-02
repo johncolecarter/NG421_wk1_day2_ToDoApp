@@ -11,8 +11,9 @@
 <ul align="center" class="list-group">
     <li class="list-group-item" *ngFor="let todo of todoList">
         <div class="view">
-            <label>{{todo.title}} <br>{{todo.time | date:'short'}}</label>
-            <!-- <input type='checkbox' (click)=lineThrough()> -->
+            <label>{{todo.title}}
+                <br>{{todo.time | date:'short'}}</label>
+            <!-- <input type='checkbox' (click)=completed()> -->
             <div class="float-right">
                 <button type="button" class="btn btn-danger btn-sm" (click)=deleteTodo(todo)>Delete</button>
             </div>

@@ -32,8 +32,9 @@ export class AppComponent implements OnInit {
     this.todoTitle = '';
   }
 
-  lineThrough(): void {
+  completed(): void {
     this.isDone = !this.isDone;
+    console.log(this.isDone);
   }
 
   deleteTodo(todo: any) {
