@@ -6,6 +6,18 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<h1 align="center">Todo List</h1>
+<ul align="center" class="list-group">
+    <li class="list-group-item" *ngFor="let todo of todoList">
+        <div class="view">
+            <label>{{todo.title}}</label>
+            <div class="float-right">
+                <button type="button" class="btn btn-danger btn-sm" (click)=deleteTodo(todo)>Delete</button>
+            </div>
+        </div>
+    </li>
+</ul>
+
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
@@ -14,6 +26,5 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<h1 class="float-right">Test</h1>
 
 <router-outlet></router-outlet>
