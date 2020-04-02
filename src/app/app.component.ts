@@ -9,12 +9,14 @@ export class AppComponent implements OnInit {
   title = 'Todos';
   todoList: any[] = [];
   todoTitle: string;
+  time: number = Date.now();
+  isDone: boolean;
 
   ngOnInit() {
     this.todoTitle = '';
     this.todoList = [
       // example of how to make an item in todo list
-      { title: 'Install Angular CLI', isDone: false }
+      { title: 'Install Angular CLI', isDone: false, time: Date.now() }
     ];
   }
 
@@ -22,11 +24,16 @@ export class AppComponent implements OnInit {
   addTodo(): void {
     this.todoList.push({
       title: this.todoTitle,
-      isDone: false
+      isDone: false,
+      time: this.time
     });
 
     // resets our todoTitle variable to an empty string
     this.todoTitle = '';
+  }
+
+  lineThrough(): void {
+    this.isDone = !this.isDone;
   }
 
   deleteTodo(todo: any) {
